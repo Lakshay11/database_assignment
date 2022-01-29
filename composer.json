@@ -1,7 +1,7 @@
 {
     "name": "lakshay11/database_assignment",
     "description": "learning database api drupal",
-    "type": "module",
+    "type": "drupal-module",
     "autoload": {
         "psr-4": {
             "Lakshay11\\DatabaseAssignment\\": "src/"
