@@ -1,0 +1,17 @@
+{
+    "name": "lakshay11/database_assignment",
+    "description": "learning database api drupal",
+    "type": "module",
+    "autoload": {
+        "psr-4": {
+            "Lakshay11\\DatabaseAssignment\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "lakshay",
+            "email": "kumarlakshay11@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
