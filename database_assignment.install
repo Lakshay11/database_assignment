@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Database Assignment module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function database_assignment_install() {
+  $database_schema = \Drupal::database()->schema();
+  if (!$database_schema->tableExists('database_assignment_main')) {
+    \Drupal::messenger()->addStatus('Creating database assignment main table');
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function database_assignment_uninstall() {
+  \Drupal::messenger()->addStatus('Nikal le!!');
+  \Drupal::database()->schema()->dropTable('database_assignment_main');
+}
+
+/**
+ * Implements hook_schema().
+ */
+function database_assignment_schema() {
+  $database_schema = \Drupal::database()->schema();
+  if (!$database_schema->tableExists('database_assignment_main')) {
+  $schema['database_assignment_main'] = [
+    'description' => 'Creates the best table in world.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique record ID.',
+      ],
+      'first_name' => [
+        'description' => 'First Name.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+      'last_name' => [
+        'description' => 'Last Name.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+      'mothers_name' => [
+        'description' => 'Mothers Name.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+      'fathers_name' => [
+        'description' => 'Fathers Name.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+ }
+}

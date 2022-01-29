@@ -1,0 +1,6 @@
+database_assignment.settings_form:
+  title: Database Assignment
+  description: Configure Database Assignment.
+  parent: system.admin_config_system
+  route_name: database_assignment.settings_form
+  weight: 10
